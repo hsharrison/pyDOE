@@ -1,13 +1,15 @@
 import os
 from setuptools import setup
-import pyDOE
 
 def read(fname):
     return open(os.path.join(os.path.dirname(__file__), fname)).read()
 
+with open('pyDOE/__version__.py') as f:
+    exec(f.read())
+
 setup(
     name='pyDOE',
-    version=pyDOE.__version__,
+    version=__version__,
     author='Abraham Lee',
     author_email='tisimst@gmail.com',
     description='Design of experiments for Python',
